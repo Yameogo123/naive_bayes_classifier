@@ -53,7 +53,6 @@ naive_bayes_default <- function(x, y, alpha=1){
 
   #2- treat categorical
   mat= as.matrix(x[!num])
-  #tables <- sapply(colnames(mat),
   funct <- function(xi) {
     var <- x[,xi]
     tab <- table(var, y, dnn = c(xi, "")) + alpha
@@ -62,7 +61,8 @@ naive_bayes_default <- function(x, y, alpha=1){
     tab
   }
   #, simplify = FALSE)
-  tables= foreach(m=colnames(mat), .combine = c, .multicombine=TRUE) %dopar% funct(m)
+  #if()
+  tables= foreach(m=colnames(mat), .combine = c, .multicombine=TRUE) %dopar% (funct(m))
   cond= list(char=tables, num=res)
   return (list(cond=cond, prior= as.matrix(probsY)))
 }
@@ -114,7 +114,7 @@ naive_bayes_multinomial <- function(x, y=NULL, smooth=1, prior= NULL){
   #sum by column of each y (with smoothness added)
   params <- rowsum(x, y, na.rm = TRUE) + smooth
   #sum of the sum by group to know all words
-  params <- params / rowSums(params)
+  params <- params / colSums(params)
 
   proba= t(params)
 
@@ -248,7 +248,8 @@ predict_proba_default <- function(model, priors, newdata){
     }
   }
   #conditionnal probabilities
-  #fin= foreach(cl=1:6, .combine = cbind) %dopar% (1 / rowSums(exp(rs - rs[,cl])))
+  #fin= foreach(cl=1:nrow(priors), .combine = cbind) %dopar% (1 / rowSums(exp(rs - rs[,cl])))
+  #colnames(fin)= rownames(priors)
   fin= exp(log_sum) / rowSums(exp(log_sum))
   return (fin)
 }
@@ -295,8 +296,23 @@ predict_proba_bern <- function(model, priors, newdata){
   #log_prio repeated on each row
   log_prio= matrix(log(prior), nrow = nrow(mt), ncol=ncol(prior), byrow = T)
   p= nd + log_prio
-  rs= exp(p)/rowSums(exp(p))
+  rs= foreach(m=1:ncol(prior), .combine = cbind) %dopar% (1 / rowSums(exp(p - p[,m])))
+  colnames(rs)= rownames(priors)
+  #rs= exp(p)/rowSums(exp(p))
   return (rs)
+}
+
+### - predict for multinomial naive bayes
+
+predict_proba_multi <- function(model, priors, newdata, classes=NULL){
+  #lets work with logarithm first and then expo to come back at default state
+  tb= tcrossprod(data.matrix(newdata), t(log(model)))
+  tab= foreach(cl=1:length(classes), .combine = cbind) %dopar% (tb[ ,cl] + log(priors[[cl]]))
+  colnames(tab) <- names(priors)
+  #res= exp(tab) / rowSums(exp(tab))
+  res= foreach(m=1:length(classes), .combine = cbind) %dopar% (1 / rowSums(exp(tab - tab[,m])))
+  colnames(res)<- classes
+  return (res)
 }
 
 
@@ -438,28 +454,16 @@ warn_ing <- function(message="warning !!", cond=T){
 
 
 
-### - predict for multinomial naive bayes
-
-predict_proba_multi <- function(model, priors, newdata, classes=NULL){
-  #lets work with logarithm first and then expo to come back at default state
-  tb= tcrossprod(data.matrix(newdata), t(log(model)))
-  tb= foreach(cl=1:length(classes), .combine = cbind) %dopar% (tb[ ,cl] + log(priors[[cl]]))
-  colnames(tb) <- names(priors)
-  res= exp(tb) / rowSums(exp(tb))
-  return (res)
-}
-
-
 #summary of both
-predict_multi <- function (model, priors, newdata, classes=NULL){
-  res= predict_proba_multi(model= model, priors= priors, newdata=newdata)
-  maxi= apply(res, 1, which.max)
-
-  group= colnames(res)[maxi]
-  pred= as.matrix(group, ncol=1)
-  colnames(pred) <- c("prediction")
-  return (as.factor(pred))
-}
+# predict_multi <- function (model, priors, newdata, classes=NULL){
+#   res= predict_proba_multi(model= model, priors= priors, newdata=newdata)
+#   maxi= apply(res, 1, which.max)
+#
+#   group= colnames(res)[maxi]
+#   pred= as.matrix(group, ncol=1)
+#   colnames(pred) <- c("prediction")
+#   return (as.factor(pred))
+# }
 
 
 
@@ -582,7 +586,7 @@ predict_proba_compl <- function(model, priors, newdata, classes=NULL){
   tb= tcrossprod(data.matrix(newdata), log_mod)
   #ln_probs= log_prio - tb
   ln_probs= foreach(m=1:length(classes), .combine = cbind) %dopar% (log_prio[[m]] - tb[ ,-m])
-  #res= foreach(n= pnames, .combine=cbind) %dopar% (1/rowSums(exp(ln_probs-as.vector(ln_probs[,n]))))
+  #res= foreach(n= 1:length(classes), .combine=cbind) %dopar% (1/rowSums(exp(ln_probs-as.vector(ln_probs[,n]))))
   res= exp(ln_probs) / rowSums(exp(ln_probs))
   colnames(res) <- classes
 

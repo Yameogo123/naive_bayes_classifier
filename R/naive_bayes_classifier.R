@@ -167,7 +167,7 @@ naive_bayes_classifier <- R6Class(
           private$disc_object= discret.fit(X, y)
           df= private$disc_object$disc.data
           private$discretized_var= private$Xlabels
-          X= df
+          X= as.data.frame(df)
         }else if (private$discretize=="non-gaussian"){
           quanti= data.frame(X) %>% select_if(is.numeric)
           nongauss= tryCatch(
@@ -184,7 +184,7 @@ naive_bayes_classifier <- R6Class(
             #df= data.frame(lapply(private$disc_object$disc.data, as.factor))
             df= private$disc_object$disc.data
             private$discretized_var= nongauss
-            X[nongauss]= df[nongauss]
+            X[,nongauss]= df[,nongauss]
           }else{
             warn_ing(message = "all numerical variables follow a gaussian law so non has been discretized", cond = TRUE)
           }
@@ -194,7 +194,7 @@ naive_bayes_classifier <- R6Class(
           private$disc_object= discret.fit(quanti, y)
           df= data.frame(lapply(private$disc_object$disc.data, as.factor)) #%>% select(-y)
           private$discretized_var= colnames(df)
-          X[private$discretized_var]= df[private$discretized_var]
+          X[,private$discretized_var]= df[,private$discretized_var]
         }
       }
 
@@ -262,7 +262,7 @@ naive_bayes_classifier <- R6Class(
         if(!is.null(private$discretized_var)){
           dt= discret.transform(private$disc_object, newdata = newdata[private$discretized_var])$disc.data
           #dt= data.frame(lapply(dt, as.factor))
-          newdata[private$discretized_var]= dt[private$discretized_var]
+          newdata[,private$discretized_var]= dt[,private$discretized_var]
         }
       }
 
@@ -328,7 +328,7 @@ naive_bayes_classifier <- R6Class(
     #' @examples
     #' #obj$summary()
     summary = function(...){
-      error(cond=!private$fitted, message = "Please do the fit first before trying to predict on a dataset.")
+      error(cond=!private$fitted, message = "Please do the fit first before trying to show summary.")
       cat("======================", sep="\n")
       cat("======================", sep="\n\n")
       cat("your algorithm type is: ", private$type)

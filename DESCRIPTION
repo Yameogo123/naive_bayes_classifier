@@ -1,0 +1,33 @@
+Package: naivebayesclassifier
+Title: NaiveBayesClassifier
+Version: 1.0.0
+Authors@R: 
+    c(
+      person("Celia", "Maurin", , "", role = c("aut"),
+             comment = c(ORCID = "1")),
+      person("Albane", "Nicoulaud", , "", role = c("aut"),
+             comment = c(ORCID = "2")),
+      person("Wendyam", "YAMEOGO", , "yameogoivan10@gmail.com", role = c("cre"),
+             comment = c(ORCID = "3"))
+    )
+Description: Implemenents Naive Bayes Classifier algorithms in R6Class
+License:  GPL-3 
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Language: en-US
+Imports:
+  R6,
+  dplyr,
+  FactoMineR,
+  caret,
+  doParallel,
+  factoextra,
+  discretization,
+  foreach,
+  parallel,
+  stats
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

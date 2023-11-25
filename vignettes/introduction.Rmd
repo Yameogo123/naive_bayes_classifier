@@ -19,7 +19,102 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(naivebayesclassifier)
+
+library(dplyr)
 ```
+
+
+
+#TRAIN TEST SPLIT SCRIPT
+
+```{r}
+train_test <- function(data, train_size=0.7){
+  set.seed(1)
+  #use 70% of dataset as training set and 30% as test set
+  sample <- sample(c(TRUE, FALSE), nrow(data), replace=TRUE, prob=c(train_size,1-train_size))
+  train  <- data[sample, ]
+  test   <- data[!sample, ]
+  return (list(train= train, test= test))
+}
+```
+
+#First test on Patients data
+
+
+```{r}
+dff= train_test(data.frame(patients))
+
+Xtrain = dff$train %>% select(-c("Depression.Diagnosis", "Anxiety.Diagnosis", "OCD.Diagnosis.Date", "Patient.ID"))
+ytrain = dff$train[["Anxiety.Diagnosis"]]
+
+Xtest = dff$test %>% select(-c("Depression.Diagnosis", "Anxiety.Diagnosis", "OCD.Diagnosis.Date", "Patient.ID"))
+ytest = dff$test[["Anxiety.Diagnosis"]]
+```
+
+
+
+# step 1: init the class with default naive bayes algorithm
+## -> as its default it will use categorical naive bayes for non numeric and gauss for numeric values
+## -> we will discretize the non-gaussian variables
+
+```{r}
+obj1= naive_bayes_classifier$new(type = "default", smoothness = 1, discretize = "non-gaussian")
+```
+
+
+
+```{r}
+print(obj1)
+```
+
+
+
+
+
+
+# step 2 lets fit our training set
+
+```{r}
+obj1$fit(Xtrain, ytrain)
+```
+
+
+```{r}
+obj1$summary()
+```
+
+
+
+
+
+## -> get classes (the y modalities)
+
+```{r}
+obj1$getClasses
+```
+
+
+
+## ->Lets make a prediction of the probabilities on our Xtest and show the first 6 rows
+
+
+```{r}
+res= obj1$predict_proba(Xtest)
+head(res)
+```
+
+## ->Lets see the evalution of this model
+
+
+```{r}
+pred= obj1$predict(Xtest)
+obj1$evaluate(pred, ytrue = ytest)
+```
+
+
+
+
+
 
 
 

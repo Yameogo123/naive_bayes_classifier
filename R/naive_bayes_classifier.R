@@ -141,7 +141,7 @@ naive_bayes_classifier <- R6Class(
     #'
     #' @examples
     #' #X= iris[,1:4]
-    #' #y= iris[-,5]
+    #' #y= iris[,-5]
     #' #obj$fit(X, y)
     fit = function(X, y){
       #check for possible error
@@ -257,16 +257,19 @@ naive_bayes_classifier <- R6Class(
       error(cond=!private$fitted, message = "Please do the fit first before trying to predict on a dataset.")
       #traitement ?
 
+      topred= names(newdata)
+
       #discretize new data ?
       if(!is.null(private$discretize)){
         if(!is.null(private$discretized_var)){
-          dt= discret.transform(private$disc_object, newdata = newdata[private$discretized_var])$disc.data
+          error(message = "some vars that has been discretized are missing in newdata", cond = sum(topred %in% private$discretized_var) == length(topred))
+          dt= discret.transform(private$disc_object, newdata = newdata[,private$discretized_var])$disc.data
           #dt= data.frame(lapply(dt, as.factor))
           newdata[,private$discretized_var]= dt[,private$discretized_var]
         }
       }
 
-      topred= names(newdata)
+
       verif= sum(topred %in% private$Xlabels) == length(topred)
       warn_ing(message = cat("some of the column you gave are unknown for the model and have been ignored: (", topred[!(topred %in% private$Xlabels)], ")\n"), cond = !verif)
 

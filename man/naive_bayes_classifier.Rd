@@ -22,7 +22,7 @@ the available types for now are gaussian, default, multinomial, binomial
 ## ------------------------------------------------
 
 #X= iris[,1:4]
-#y= iris[-,5]
+#y= iris[,-5]
 #obj$fit(X, y)
 
 ## ------------------------------------------------
@@ -160,7 +160,7 @@ will save the model (condtional probabilities of X by y) and the prior (y classe
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{#X= iris[,1:4]
-#y= iris[-,5]
+#y= iris[,-5]
 #obj$fit(X, y)
 }
 \if{html}{\out{</div>}}

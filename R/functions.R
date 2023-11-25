@@ -34,6 +34,7 @@ check_output <- function(output){
 #alpha = 1 its for laplace
 
 naive_bayes_default <- function(x, y, alpha=1){
+  registerDoParallel(cores=detectCores() %>% -1)
 
   target= as.factor(y)
   probsY= prop.table(table(target))
@@ -265,7 +266,7 @@ predict_proba_gauss <- function(model, priors, newdata, classes){
   # so we give it a threshold of 10^-3
   sd[sd <= 0] <- 0.001
   #
-
+  #????
   eps <- log(.Machine$double.xmin)
   threshold <- log(0.001)
   interm<- function(c) {

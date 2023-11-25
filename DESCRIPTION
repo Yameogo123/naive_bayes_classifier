@@ -10,8 +10,8 @@ Authors@R:
       person("Wendyam", "YAMEOGO", , "yameogoivan10@gmail.com", role = c("cre"),
              comment = c(ORCID = "3"))
     )
-Description: Implemenents Naive Bayes Classifier algorithms in R6Class
-License:  GPL-3 
+Description: Implemenents Naive Bayes Classifier algorithms in R6Class.
+License: GPL-3 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
@@ -26,8 +26,19 @@ Imports:
   discretization,
   foreach,
   parallel,
-  stats
+  stats,
+  readr,
+  tibble
 Suggests: 
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+LazyData: true
+URL: https://github.com/Yameogo123/naive_bayes_classifier
+
+
+
+
+

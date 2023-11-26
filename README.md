@@ -196,13 +196,13 @@ Let's dig into the class:
 
 <h3> <b> UI with R-shiny to test the code </b> </h3>
 
-<h5><b> 1- LOAD FILE <b> </h5>
-
-
+<h5><b> 1- Our RSHINY APP <b> </h5>
+  
+https://naivebayesclassfier.shinyapps.io/myapp/ <br/>
 
 <br/>
 
-<h5><b> 2- DISPLAY PLOTS <b> </h5>
+<h5><b> 2- THE APP USAGE <b> </h5>
 
 - Page 'La fonction': (describe R6 attributes and methods)<br/>
 <img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">

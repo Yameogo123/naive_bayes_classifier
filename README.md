@@ -241,6 +241,7 @@ Let's dig into the class:
     http://gnpalencia.org/optbinning/mdlp.html <br/>
     https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html <br/>
     https://www.youtube.com/watch?v=km2LoOpdB3A <br/>
+    https://tutoriels-data-science.blogspot.com/p/tutoriels-en-francais.html <br/>
     https://scikit-learn.org/stable/modules/naive_bayes.html <br/><br/>
 
 - Rshiny:<br/>
@@ -258,13 +259,13 @@ Let's dig into the class:
 
 - Latex : (https://www.overleaf.com) <br/><br/>
 
-- Parallel: 
+- Parallel: <br/>
     https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf <br/>             
     https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html <br/><br/>
     
 - Discretisation: https://eric.univ-lyon2.fr/ricco/tanagra/fichiers/fr_Tanagra_Discretization_Arbre.pdf <br/><br/>
 
-- reduction: 
+- reduction: <br/>
     https://cran.r-project.org/web/packages/FactoMineR/index.html <br/>
     https://www.rdocumentation.org/packages/factoextra/versions/1.0.7/topics/fviz_famd <br/><br/>
    

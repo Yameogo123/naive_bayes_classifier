@@ -204,8 +204,12 @@ Let's dig into the class:
 
 <h5><b> 2- DISPLAY PLOTS <b> </h5>
 
-- Page 'La fonction': (describe R6 attributes and methods)
+- Page 'Fonction': (describe R6 attributes and methods)
 <img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">
+
+- Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)
+<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
+
 
 - Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)
 <img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">

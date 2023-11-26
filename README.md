@@ -260,7 +260,7 @@ Let's dig into the class:
 - Latex : (https://www.overleaf.com) <br/><br/>
 
 - Parallel: <br/>
-    https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf <br/>             
+    https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf <br/>
     https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html <br/><br/>
     
 - Discretisation: https://eric.univ-lyon2.fr/ricco/tanagra/fichiers/fr_Tanagra_Discretization_Arbre.pdf <br/><br/>

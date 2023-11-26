@@ -37,7 +37,7 @@ Depends:
     R (>= 2.10)
 LazyData: true
 URL: https://github.com/Yameogo123/naive_bayes_classifier
-
+BugReports: https://github.com/Yameogo123/naive_bayes_classifier/issues
 
 
 

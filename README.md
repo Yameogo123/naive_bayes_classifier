@@ -218,6 +218,8 @@ Let's dig into the class:
 ![shiny_data2](https://github.com/Yameogo123/naive_bayes/assets/58187516/2a154008-4a1e-4dca-b83c-331caff8aa10)
 <br/><br/>
 
+- Page 'Calcul' (click on Prediction' tab: you will see the predictions on top and just after you will see the conditionnal probabilities of these predictions.)
+![last](https://github.com/Yameogo123/naive_bayes/assets/58187516/9c36c021-6454-45b0-8efc-c1d640414e02)
 
 <br/>
 <br/>

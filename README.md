@@ -208,6 +208,10 @@ Let's dig into the class:
 <img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">
 <br/><br/>
 
+- Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)<br/>
+<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
+
+
 - Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)<br/>
 <img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">
 <br/><br/>
@@ -220,10 +224,9 @@ Let's dig into the class:
 <br/><br/>
 
 - Page 'Calcul' (click on Prediction' tab: you will see the predictions on top and just after you will see the conditionnal probabilities of these predictions.)<br/>
+Here if you didn't set a test data it will make the prediction on the train data. <br/>
+So that means you  can ignore test data and only work with train.<br/> 
 ![last](https://github.com/Yameogo123/naive_bayes/assets/58187516/9c36c021-6454-45b0-8efc-c1d640414e02)
-
-- Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)<br/>
-<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
 
 
 <br/>

@@ -114,7 +114,7 @@ After installing it you can consume it with <br/>
 <br/>
 
 <h3> <b> USAGE </b> <h3>
-
+<br/>
 
 Let's dig into the class:
 <ul>
@@ -179,7 +179,7 @@ Let's dig into the class:
             NB: <br/>
             - takes 2 upon 3 arguments. either (xtest and ytrue) or (ypred and ytrue). ytrue would be in our case ytest and ypred is the prediction on xtest. <br/>
             - One more argument of evaluate is positive_class. As we can see in our evaluate results, it takes No as target class. But we can put yes instead. That's where positive_class comes.  <br/>
-            - <font color=red>Obviously it's a really bad accuracy because we use a lot of different variable to show that it's possible</font><br/>
+            - <font color=red>Obviously it's a really bad accuracy because we use a lot of different variable to show that it's possible</font><br/><br/>
          </li>
       </ul>
    </li>
@@ -204,11 +204,61 @@ Let's dig into the class:
 
 <h5><b> 2- DISPLAY PLOTS <b> </h5>
 
-- Example 1:
-![shiny_data](https://github.com/Yameogo123/naive_bayes/assets/58187516/1b372b68-48eb-4e0f-90be-a13695663edc)
+- Page de chargement des données: (dans l'onglet Calcul au niveau du tab Tables)
+<img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">
+<br/><br/>
 
-- Example 1 (bottom)
+- Page d'affichage des graphes: (dans l'onglet Calcul au niveau du tab Graphes)
+![shiny_data](https://github.com/Yameogo123/naive_bayes/assets/58187516/1b372b68-48eb-4e0f-90be-a13695663edc)
+<br/><br/>
+
 ![shiny_data2](https://github.com/Yameogo123/naive_bayes/assets/58187516/2a154008-4a1e-4dca-b83c-331caff8aa10)
+<br/><br/>
+
+
+<br/>
+<br/>
+
+
+
+<h3> <b> DOCUMENTATION </b> <h3>
+<br/>
+
+- Naive Bayes algorithms: <br/>
+    https://rdrr.io/cran/naivebayes/api/ (r packages source) <br/>
+    https://github.com/scikit-learn/scikit-learn/blob/main/sklearn/naive_bayes.py (python class source) <br/>
+    https://www.youtube.com/watch?v=yRzIyWVEaCQ <br/>
+    http://gnpalencia.org/optbinning/mdlp.html <br/>
+    https://nlp.stanford.edu/IR-book/html/htmledition/the-bernoulli-model-1.html <br/>
+    https://www.youtube.com/watch?v=km2LoOpdB3A <br/>
+    https://scikit-learn.org/stable/modules/naive_bayes.html <br/><br/>
+
+- Rshiny:<br/>
+    https://rstudio.github.io/shinythemes/  <br/>
+    https://mastering-shiny.org/ <br />
+    https://shiny.posit.co/r/articles/build/action-buttons <br />
+    https://campus.datacamp.com/courses/building-web-applications-with-shiny-in-r/get-started-with-shiny?ex=1 <br/><br/>
+    
+- Package R (R6 class) <br/>
+   https://campus.datacamp.com/courses/creating-r-packages/the-r-package-structure?ex=6 <br/>
+   https://app.datacamp.com/learn/courses/object-oriented-programming-with-s3-and-r6-in-r <br/>
+   https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html <br/>
+   https://r-pkgs.org/vignettes.html  <br/><br/>                       
+   
+
+- Latex : (https://www.overleaf.com) <br/><br/>
+
+- Parallel: 
+    https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf <br/>             
+    https://cran.r-project.org/web/packages/foreach/vignettes/foreach.html <br/><br/>
+    
+- Discretisation: https://eric.univ-lyon2.fr/ricco/tanagra/fichiers/fr_Tanagra_Discretization_Arbre.pdf <br/><br/>
+
+- reduction: 
+    https://cran.r-project.org/web/packages/FactoMineR/index.html <br/>
+    https://www.rdocumentation.org/packages/factoextra/versions/1.0.7/topics/fviz_famd <br/><br/>
+   
+  
 
 
 <br/>

@@ -204,11 +204,14 @@ Let's dig into the class:
 
 <h5><b> 2- DISPLAY PLOTS <b> </h5>
 
-- Page de chargement des données: (dans l'onglet Calcul au niveau du tab Tables)
+- Page 'La fonction': (describe R6 attributes and methods)
+<img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">
+
+- Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)
 <img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">
 <br/><br/>
 
-- Page d'affichage des graphes: (dans l'onglet Calcul au niveau du tab Graphes)
+- Page 'Calcul': (click on 'Graphiques' tab: you will be able to display data you just loaded before)
 ![shiny_data](https://github.com/Yameogo123/naive_bayes/assets/58187516/1b372b68-48eb-4e0f-90be-a13695663edc)
 <br/><br/>
 

@@ -204,26 +204,27 @@ Let's dig into the class:
 
 <h5><b> 2- DISPLAY PLOTS <b> </h5>
 
-- Page 'Fonction': (describe R6 attributes and methods)
+- Page 'La fonction': (describe R6 attributes and methods)<br/>
 <img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">
+<br/><br/>
 
-- Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)
-<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
-
-
-- Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)
+- Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)<br/>
 <img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">
 <br/><br/>
 
-- Page 'Calcul': (click on 'Graphiques' tab: you will be able to display data you just loaded before)
+- Page 'Calcul': (click on 'Graphiques' tab: you will be able to display data you just loaded before)<br/>
 ![shiny_data](https://github.com/Yameogo123/naive_bayes/assets/58187516/1b372b68-48eb-4e0f-90be-a13695663edc)
 <br/><br/>
 
 ![shiny_data2](https://github.com/Yameogo123/naive_bayes/assets/58187516/2a154008-4a1e-4dca-b83c-331caff8aa10)
 <br/><br/>
 
-- Page 'Calcul' (click on Prediction' tab: you will see the predictions on top and just after you will see the conditionnal probabilities of these predictions.)
+- Page 'Calcul' (click on Prediction' tab: you will see the predictions on top and just after you will see the conditionnal probabilities of these predictions.)<br/>
 ![last](https://github.com/Yameogo123/naive_bayes/assets/58187516/9c36c021-6454-45b0-8efc-c1d640414e02)
+
+- Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)<br/>
+<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
+
 
 <br/>
 <br/>

@@ -94,7 +94,7 @@ NB: First you need to install *devtools* if you don't have it:
 </br>
 If every thing is installed now you can copy paste this line to install it in your R:
 </br>
-*`devtools::github_install("Yameogo123/naive_bayes_classifier") `*
+*`devtools::install_github("Yameogo123/naive_bayes_classifier") `*
 
 </br>
 </br>

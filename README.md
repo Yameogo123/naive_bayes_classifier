@@ -125,13 +125,11 @@ Let's dig into the class:
             We have integrated data on which you can test the packages functionnality: <br/>
             We have <b>patients</b> and <b>students</b> dataframes (tibble type).
             You can see the documentation with (example): <br/>
-            <img width="580" alt="St" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/72995cd3-404a-4ec5-b60e-02f0a0701dcc">.<br/>
-            That will return something like: <br/>
-            <img width="510" alt="Students" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/956feb8b-9e30-4d1b-bd96-9ff89b05fedf"><br/>
+            <img width="464" alt="Screenshot 2023-12-05 at 14 33 40" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/e90e55a0-1aa5-46c6-8ddd-eda792fc9f71">
          </li>
          <li>
             You can also see the documentation of the naive bayes class with the same syntax as: <b>?naive_bayes_classifier</b><br/>
-            <img width="510" alt="Screenshot 2023-11-26 at 13 36 04" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/2ae4670e-78f9-41d9-bbc3-b1b6099567b0"><br/>
+            <img width="464" alt="Screenshot 2023-12-05 at 14 33 48" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/d222b43e-78c0-442a-a03c-a6cda722e862"><br/>
          </li>
       </ul>
    </li>
@@ -142,40 +140,42 @@ Let's dig into the class:
          <li>
             First thing first after loading your package, initialize an object with it as:
             <br/>
-            <img width="755" alt="Screenshot 2023-11-26 at 13 51 20" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/25b82aeb-510b-4c41-bdce-0d78314a6dfc"><br/><br/>
+            <img width="724" alt="Screenshot 2023-12-05 at 14 29 01" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/4d5a7781-2b15-490e-a3ff-03ae5da77674"><br/><br/>
             NB: <br/>
             - type gives the type of naive bayes to use and can be one of (default, gaussian, bernoulli, multinomial)<br/>
             - discretize can be NULL, all (to discretize everything), non-gaussian (to discretize non-gaussian columns: that will use shapiro to test)<br/>
             - smoothness is between 0 (excluded) and 1 (or more but it's not a good idea) and will help us avoid 0 probabilities problems.<br/><br/>
          </li>
          <li>
-            We will use our patients data.<br/> <font color=red>!!PLEASE CONVERT THE DATA TO DATAFRAME BEFORE USING IT (IT IS TIBBLE AND SOMETIME IT BEHAVE DIFFERENTLY!!</font><br/><br/>
-            <img width="829" alt="Screenshot 2023-11-26 at 14 09 48" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/99ae6589-ae36-46a6-b386-4a656b855a2e"><br/><br/>
-            Then on train patients data that we apply the fit function<br/><br/>
-            <img width="843" alt="Screenshot 2023-11-26 at 14 13 02" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/940be98a-d3e6-4f7d-a766-b4ac0c38808d"><br/><br/>
+            We will use our students data.<br/> <font color=red>!!PLEASE CONVERT THE DATA TO DATAFRAME BEFORE USING IT (IT IS TIBBLE AND SOMETIME IT BEHAVE DIFFERENTLY!!</font><br/><br/>
+            Then on train students data that we apply the fit function<br/><br/>
+            <img width="523" alt="Screenshot 2023-12-05 at 14 29 43" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/08f219bc-b6cf-4d7e-b872-8f7b54e78cb2">
+            <br/><br/>
             NB: <br/>
-            - You can see warning under in red. Don't mind them it just giving you information about how much columns have been discretised and another message that inform you that depending of you dataframe size the discretization can take supplementary seconds.(or minutes)<br/>
+            - Sometimes you can see warning under in red. Don't mind them it just giving you information about how much columns have been discretised and another message that inform you that depending of you dataframe size the discretization can take supplementary seconds.(or minutes)<br/>
             - You must pass the Xtrain as first argument and the ytrain as second. Xtrain is a dataframe or matrix type and his number of row must be the same as the length of ytrain that is a vector containing the classes corresponding to Xtrain.<br/>
             <br/><br/>
          </li>
          <li>
             Then you can call the binding functions to see the details of the object<br/>
-            <img width="843" alt="Screenshot 2023-11-26 at 14 24 04" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/2d5a941f-78e0-4d8f-a098-2910461300d7"><br/><br/>
+            <img width="520" alt="Screenshot 2023-12-05 at 14 31 31" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/834c6183-6318-409e-873a-8d7018f9b79b"><br/><br/>
          </li>
          <li>
             You can see the summary of the object that will give you all the weights (probabilities).<br/>
             warning: summary will be as long as there are informations in your dataframe. <br/>
-            <img width="512" alt="Screenshot 2023-11-26 at 14 27 50" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a6aad900-f2b3-4293-ba6a-14483c97917f"><br/><br/>
+             <img width="523" alt="Screenshot 2023-12-05 at 14 30 15" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/5df8619a-5ec1-4bea-b497-713dc357fc7a">
+            <img width="523" alt="Screenshot 2023-12-05 at 14 30 33" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/7e474c39-c96b-4b80-b91e-7d9b6e6bc856">
+            <img width="870" alt="Screenshot 2023-12-05 at 14 30 52" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/9550d910-7d07-43ca-a10f-5170c9abf1d0"><br/><br/>
          </li>
          <li>
             Let's do the probabilities prediction on the test data set<br/>
-            <img width="683" alt="Screenshot 2023-11-26 at 14 30 27" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/d031b7bd-a7a0-4017-9268-3d0708524f76"><br/><br/> 
+            <img width="591" alt="Screenshot 2023-12-05 at 14 31 46" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/3774c1fc-ab61-4541-9c19-5f9d377d43a0"><br/><br/> 
             NB: <br/>
             Xtest must be a dataframe with the same columns as the train one. *predict* function works the same but will predict the classes of each Xtest rows and return a factor<br/><br/>
          </li>
          <li>
             Let's evalute the performance of our classification<br/>
-            <img width="683" alt="Screenshot 2023-11-26 at 14 35 53" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/4b2b2135-5fcd-4cc1-b2ce-1055cacf815e"><br/><br/>
+             <img width="591" alt="Screenshot 2023-12-05 at 14 32 02" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/c162ea4e-da5e-4c79-8a22-c21acd1fe651"><br/><br/>
             NB: <br/>
             - takes 2 upon 3 arguments. either (xtest and ytrue) or (ypred and ytrue). ytrue would be in our case ytest and ypred is the prediction on xtest. <br/>
             - One more argument of evaluate is positive_class. As we can see in our evaluate results, it takes No as target class. But we can put yes instead. That's where positive_class comes.  <br/>
@@ -205,28 +205,29 @@ https://naivebayesclassfier.shinyapps.io/myapp/ <br/>
 <h5><b> 2- THE APP USAGE <b> </h5>
 
 - Page 'La fonction': (describe R6 attributes and methods)<br/>
-<img width="964" alt="im2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/90a46aee-47a1-4108-8720-d18061d1751f">
+<img width="1291" alt="Screenshot 2023-12-05 at 14 44 10" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/6b3e159a-89a1-48a4-8822-a937998916b1">
+
 <br/><br/>
 
 - Page 'Exemple' (will display an explained exemple of each algorithm of naive bayes)<br/>
-<img width="949" alt="last2" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/a601cdc2-c0db-4a06-a49d-d742398bb8fb">
+
+<img width="1291" alt="Screenshot 2023-12-05 at 14 44 15" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/50450971-de90-437b-ae57-a56173b3aa4a">
 
 
 - Page 'Calcul': (click on 'Tables' tab: you will be able to load data and see table)<br/>
-<img width="962" alt="image" src="https://github.com/Yameogo123/naive_bayes/assets/58187516/e70be4f5-37fc-4e8d-b30e-6b5d799df33b">
+<img width="1291" alt="Screenshot 2023-12-05 at 14 44 35" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/33d3a583-e36d-462f-84f6-2ec5b6d9b518">
+
 <br/><br/>
 
 - Page 'Calcul': (click on 'Graphiques' tab: you will be able to display data you just loaded before)<br/>
-![shiny_data](https://github.com/Yameogo123/naive_bayes/assets/58187516/1b372b68-48eb-4e0f-90be-a13695663edc)
+<img width="1291" alt="Screenshot 2023-12-05 at 14 44 40" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/9b1971d0-e7f0-407f-9524-f4197fad03f2">
 <br/><br/>
 
-![shiny_data2](https://github.com/Yameogo123/naive_bayes/assets/58187516/2a154008-4a1e-4dca-b83c-331caff8aa10)
-<br/><br/>
 
 - Page 'Calcul' (click on Prediction' tab: you will see the predictions on top and just after you will see the conditionnal probabilities of these predictions.)<br/>
 Here if you didn't set a test data it will make the prediction on the train data. <br/>
 So that means you  can ignore test data and only work with train.<br/> 
-![last](https://github.com/Yameogo123/naive_bayes/assets/58187516/9c36c021-6454-45b0-8efc-c1d640414e02)
+<img width="1291" alt="Screenshot 2023-12-05 at 14 44 47" src="https://github.com/Yameogo123/naive_bayes_classifier/assets/58187516/d3d4bb24-7283-4d3f-9224-dd528e205bde">
 
 
 <br/>

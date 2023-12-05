@@ -71,7 +71,7 @@ P(Y/X) = P(Y) * $\prod$ P(X/Y)
 <br/>
 <b>NB: THE MOST USED IS THE LOG FORM:</b>
 <br/>
-P(Y/X) = log(P(Y))  + $\sum$ log(P(X/Y))
+P(Y/X) = log(P(Y))  + $\PI$ log(P(X/Y))
 <br/>
 
 
